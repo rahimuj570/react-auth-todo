@@ -50,6 +50,15 @@ const Login = () => {
             Create An Account
           </span>
         </p>
+        <p className="mt-2 text-center">
+          Forget Password?{" "}
+          <span
+            onClick={() => navigate("/resetPass")}
+            className="cursor-pointer font-semibold hover:text-sky-500   duration-200 text-sky-400"
+          >
+            Click Here
+          </span>
+        </p>
       </form>
       <SocialSignin />
     </>

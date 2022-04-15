@@ -12,15 +12,15 @@ const SocialSignin = () => {
       </div>
 
       <div className="sm:w-2/6 w-5/6 mx-auto">
-        <div className="mb-3 duration-300  hover:bg-slate-50 rounded-md   py-2 text-xl flex items-center justify-center px-5 shadow">
+        <div className="mb-3 cursor-pointer duration-300  hover:bg-slate-50 rounded-md   py-2 text-xl flex items-center justify-center px-5 shadow">
           <FcGoogle className="basis-10 text-3xl mx-1" />{" "}
           <p className="">Continue With Google</p>
         </div>
-        <div className="mb-3 duration-300 hover:bg-slate-50 rounded-md   py-2 text-xl flex items-center justify-center px-5 shadow">
+        <div className="mb-3 cursor-pointer duration-300 hover:bg-slate-50 rounded-md   py-2 text-xl flex items-center justify-center px-5 shadow">
           <FaGithub className="basis-10  text-3xl mx-1" />{" "}
           <p className="">Continue With Github</p>
         </div>
-        <div className="mb-3 duration-300 hover:bg-slate-50 rounded-md   py-2 text-xl flex items-center justify-center px-5 shadow">
+        <div className="mb-3 cursor-pointer duration-300 hover:bg-slate-50 rounded-md   py-2 text-xl flex items-center justify-center px-5 shadow">
           <FaFacebook className="basis-10 text-sky-600 text-3xl mx-1" />{" "}
           <p className="">Continue With Facebook</p>
         </div>
