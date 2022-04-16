@@ -5,3 +5,7 @@
   margin: 0;
   padding: 0;
 }
+@font-face {
+  font-family: "writer";
+  src: url("../public/WriterLine.ttf");
+}

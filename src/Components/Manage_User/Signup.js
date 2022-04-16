@@ -8,6 +8,9 @@ const Signup = () => {
   const navigate = useNavigate();
   return (
     <>
+      <h1 className="text-sky-600 my-2 shadow-bottom border-b-2 rounded-full mt-10 border-x-2 p-2 font-bold w-5/6 sm:w-3/6 md:w-2/6 font-writer mx-auto text-center text-2xl">
+        SignUp Here
+      </h1>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -52,7 +55,7 @@ const Signup = () => {
         />
 
         <input
-          className="mt-1 bg-sky-400 text-white w-5/6 sm:w-3/6 md:w-2/6 mx-auto p-1 rounded font-bold hover:bg-sky-500 duration-200"
+          className="cursor-pointer mt-1 bg-sky-400 text-white w-5/6 sm:w-3/6 md:w-2/6 mx-auto p-1 rounded font-bold hover:bg-sky-500 duration-200"
           type="submit"
           value="Log In"
         />

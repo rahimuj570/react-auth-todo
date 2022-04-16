@@ -1,7 +1,7 @@
 import React from "react";
 
 const ToDo = () => {
-  return <div></div>;
+  return <></>;
 };
 
 export default ToDo;
