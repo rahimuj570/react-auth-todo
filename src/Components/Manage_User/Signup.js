@@ -8,6 +8,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.int";
 import { async } from "@firebase/util";
+import Loading from "../Loading";
 
 const Signup = () => {
   const [showPass, setShowPass] = useState(false);
@@ -79,7 +80,6 @@ const Signup = () => {
       <form
         onSubmit={async (e) => {
           e.preventDefault();
-          let pass = e.target.password.value;
           const userInfo = {
             password: e.target.password.value,
             name: e.target.name.value,
@@ -130,6 +130,7 @@ const Signup = () => {
         }}
         className="flex flex-col justify-center"
       >
+        {loading && <Loading />}
         <input
           className="border my-1 p-1 w-5/6 sm:w-3/6 md:w-2/6 mx-auto"
           required

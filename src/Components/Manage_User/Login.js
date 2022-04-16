@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import auth from "../../firebase.int";
+import Loading from "../Loading";
 import SocialSignin from "./SocialSignin";
 
 const Login = () => {
@@ -78,6 +79,7 @@ const Login = () => {
         }}
         className="flex flex-col justify-center"
       >
+        {loading && <Loading />}
         <div className="relative border my-1  w-5/6 sm:w-3/6 md:w-2/6 mx-auto ">
           <input
             className=" p-1 w-full"
@@ -108,7 +110,6 @@ const Login = () => {
             {customError.password !== "false" ? customError.password : ""}
           </p>
         </div>
-
         <input
           className="mt-1 bg-sky-400 text-white w-5/6 sm:w-3/6 md:w-2/6 mx-auto p-1 rounded font-bold hover:bg-sky-500 duration-200 cursor-pointer"
           type="submit"
