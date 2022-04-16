@@ -16,61 +16,8 @@ const Signup = () => {
 
   const [customError, setCustomError] = useState({});
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating, error1] = useUpdateProfile(auth);
-
-  // ======= ACTION FUNCTION START ======
-  // useEffect(() => {
-  //   if (
-  //     !/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-  //       userInfo.email
-  //     )
-  //   ) {
-  //     setCustomError({
-  //       ...customError,
-  //       email: "* Input a valid Email",
-  //     });
-  //     return;
-  //   } else {
-  //     setCustomError({ email: false });
-  //   }
-  //   if (
-  //     !/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(
-  //       userInfo.password
-  //     )
-  //   ) {
-  //     setCustomError({
-  //       password:
-  //         "* Password must be contain minimum 6 character with numeric and special symbol",
-  //     });
-  //     return;
-  //   } else {
-  //     setCustomError({ ...customError, password: "false" });
-  //   }
-  //   if (userInfo.confirmPassword !== userInfo.password) {
-  //     setCustomError({
-  //       ...customError,
-  //       confirmPassword: "* The password is not same.",
-  //     });
-  //     return;
-  //   } else {
-  //     setCustomError({ confirmPassword: "false" });
-  //   }
-  //   const createUser = async () => {
-  //     alert("ddd");
-  //     await createUserWithEmailAndPassword(userInfo.email, userInfo.password);
-  //     await updateProfile({ displayName: userInfo.name });
-  //   };
-
-  //   // setTimeout(() => {
-  //   //   updateProfile({ displayName: userInfo.name });
-  //   //   console.log("Updated profile");
-  //   // }, 100);
-  //   // if (!updating) {
-  //   //   console.log(user?.user.displayName);
-  //   // }
-  // }, [userInfo]);
-  // ======= ACTION FUNCTION END ======
 
   return (
     <>
