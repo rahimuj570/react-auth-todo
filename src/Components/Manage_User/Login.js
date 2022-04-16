@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { FaRegEye } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import auth from "../../firebase.int";
 import SocialSignin from "./SocialSignin";
 
@@ -14,6 +16,17 @@ const Login = () => {
 
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <h1 className="my-2 shadow-bottom border-b-2 rounded-full mt-10 border-x-2 p-2 font-bold w-5/6 sm:w-3/6 md:w-2/6 font-writer mx-auto text-sky-600 text-center text-2xl">
         Log In Here
       </h1>
@@ -51,8 +64,16 @@ const Login = () => {
             setCustomError({ ...customError, password: "false" });
           }
           await signInWithEmailAndPassword(userInfo.email, userInfo.password);
-          console.log(error.message);
-          console.log(error.code);
+          if (error?.code === "auth/invalid-email") {
+            toast.error("Your Email Address is not Found");
+            return;
+          } else if (error?.code === "auth/invalid-password") {
+            toast.error("Your Password My be Wrong");
+          } else {
+            toast.error(
+              "Something Went Wrong!  Please Check The Email and Password."
+            );
+          }
           // navigate("/");
         }}
         className="flex flex-col justify-center"
