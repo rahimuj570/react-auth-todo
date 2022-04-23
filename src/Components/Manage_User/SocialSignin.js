@@ -11,7 +11,7 @@ const SocialSignin = () => {
         <div className="rounded h-1 sm:w-2/6 md:w-1/6 w-full bg-sky-200"></div>
       </div>
 
-      <div className="sm:w-2/6 w-5/6 mx-auto">
+      <div className="sm:w-2/6 w-5/6 mx-auto mb-10">
         <div className="mb-3 cursor-pointer duration-300  hover:bg-slate-50 rounded-md   py-2 text-xl flex items-center justify-center px-5 shadow">
           <FcGoogle className="basis-10 text-3xl mx-1" />{" "}
           <p className="">Continue With Google</p>
