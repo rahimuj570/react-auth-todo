@@ -14,7 +14,7 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [customError, setCustomError] = useState({});
-
+  console.log(user);
   return (
     <>
       <ToastContainer
@@ -65,17 +65,20 @@ const Login = () => {
             setCustomError({ ...customError, password: "false" });
           }
           await signInWithEmailAndPassword(userInfo.email, userInfo.password);
-          if (error?.code === "auth/invalid-email") {
-            toast.error("Your Email Address is not Found");
-            return;
-          } else if (error?.code === "auth/invalid-password") {
-            toast.error("Your Password My be Wrong");
+          if (error) {
+            if (error?.code === "auth/invalid-email") {
+              toast.error("Your Email Address is not Found");
+              return;
+            } else if (error?.code === "auth/invalid-password") {
+              toast.error("Your Password My be Wrong");
+            } else {
+              toast.error(
+                "Something Went Wrong!  Please Check The Email and Password."
+              );
+            }
           } else {
-            toast.error(
-              "Something Went Wrong!  Please Check The Email and Password."
-            );
+            navigate("/");
           }
-          // navigate("/");
         }}
         className="flex flex-col justify-center"
       >
